@@ -13,6 +13,27 @@ router.get('/test-me', function (req, res) {
     res.send('My first ever api!')
 });
 
+router.get('/sol1', function(req, res){
+    
+    let array = [1,2,3,4,5,7,8,9]
+let arraySum = (0)
+let n = array[array.length-1]
+let sum = (n*(n+1)/2)
+for(let i =0;i<array.length;i++){
+     arraySum = arraySum + array[i]
+}
+
+let missingNum = sum-arraySum;
+console.log("missingNum is "+ missingNum)
+        
+    res.send({data:missingNum});
+})
+
+
+
+
+
+
 router.get("/movies/:indexNumber", function(req, res){
     const movies = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
     console.log(req.params.indexNumber)
@@ -102,6 +123,38 @@ router.get("/films/:filmId", function(req, res){
        //if there is no match give an error response
        res.send("The film id doesn't match any movie")
 })
+
+// ===================================1====================================
+
+// Q1.
+   // -write an api which gives the missing number in an array of integers starting from 1….e.g [1,2,3,5,6,7] : 4 is missing
+
+//    router.get('/sol1', function(req, res){
+    
+//     let array = [1,2,3,4,5,7,8,9]
+// let arraySum = (0)
+// let n = array[array.length-1]
+// let sum = (n*(n+1)/2)
+// for(let i =0;i<array.length;i++){
+//      arraySum = arraySum + array[i]
+// }
+
+// let missingNum = sum-arraySum;
+// console.log("missingNum is "+ missingNum)
+        
+//     res.send({data:missingNum});
+// })
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
 // adding this comment for no reason
