@@ -34,5 +34,64 @@ router.get('/student-details/:name', function(req, res){
     
     res.send('Dummy response')
 })
+// ========================1======================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =====================================2==========================
+router.get('/sol2', function(req, res){
+    
+    let array = [33,34,36,37]
+let arraySum = (0)
+let n = array[array.length-1]
+let m = array[0]-1
+let sum = (n*(n+1)/2)
+let sum2 = (m*(m+1)/2)
+let final = sum-sum2
+for(let i =0;i<array.length;i++){
+     arraySum = arraySum + array[i]
+}
+
+let missingNum = final-arraySum;
+console.log("missingNum is "+ missingNum)
+        
+    res.send({data:missingNum});
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
