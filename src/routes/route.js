@@ -70,4 +70,78 @@ router.post("/test-post-4", function(req, res) {
     res.send(  { msg: arr , status: true }  )
 })
 
+router.post('/test-you', function(req, res){
+res.send(["hy"])
+})
+
+router.post('/chetan-16',function(req, res){
+let userName = req.body.name
+let information = req.body.info.age
+let info1 = req.body.info.location
+console.log(userName, information, info1)
+    res.send(["hy my name is chetan"])
+    let c = req.body
+    // console.log(c)
+})
+
+router.post('/chetannew', function(req, res){
+    let array = [16, 25, 36, 45]
+    let nea = req.body.newa
+    array.push(nea)
+    console.log(array)
+    res.send(array)
+
+
+})
+
+let players =
+  [
+    {
+      "name": "manish",
+      "dob": "1/1/1995",
+      "gender": "male",
+      "city": "jalandhar",
+      "sports": [
+        "swimming"
+      ]
+    },
+    {
+      "name": "gopal",
+      "dob": "1/09/1995",
+      "gender": "male",
+      "city": "delhi",
+      "sports": [
+        "soccer"
+      ],
+    },
+    {
+      "name": "lokesh",
+      "dob": "1/1/1990",
+      "gender": "male",
+      "city": "mumbai",
+      "sports": [
+        "soccer"
+      ],
+    },
+  ]
+
+
+
+router.post('/players', function (req, res) {
+    //LOGIC WILL COME HERE
+    let newplayer = req.body
+    let news = newplayer.name
+
+    for(i =0; i<players.length; i++){
+        if(players[i].name == news){
+            // console.log("player already listed")
+            return res.send("player is already listed")
+            // break
+        }
+        }
+  players.push(newplayer)
+//   res.send({ data: players, status: true })
+res.send({players})
+    })
+
 module.exports = router;
