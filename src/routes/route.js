@@ -11,4 +11,9 @@ router.post("/createUser", UserController.createUser  )
 
 router.get("/getUsersData", UserController.getUsersData)
 
+// ===================================================================//
+
+router.post('/createbooks', UserController.createBooks)
+
+
 module.exports = router;
