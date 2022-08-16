@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema( {
 
 
 const bookSchema = new mongoose.Schema({
-    bookname: {type:String,
+    bookname: {type: String,
         unique:true,
         required:true},
         authorName: String,
