@@ -16,9 +16,9 @@ const bookSchema = new mongoose.Schema( {
     },
     // sales: {type: Number, default: 10}
 year:{
-    type:Number,
-    default:"2021",
-    require: true
+    type: String,
+    default:"2021"
+    // require:
 },
 totalpages:Number,
 stockAvailable:Boolean
