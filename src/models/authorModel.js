@@ -4,8 +4,11 @@ const authorSchema = new mongoose.Schema( {
     author_id: String,
     author_name: String,
     age:Number,
-    address:String
+    address:String,
+    rating: {type: Number,
+    default: 4.5
+}
 
 }, { timestamps: true });
 
-module.exports = mongoose.model('Author', authorSchema)
+module.exports = mongoose.model('Authorrr', authorSchema)
