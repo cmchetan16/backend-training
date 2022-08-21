@@ -16,6 +16,11 @@ router.get("/getAuthorsData", authorController.getAuthorsData)
 router.post("/createBook", bookController.createBook  )
 
 router.get("/getBooksData", bookController.getBooksData)
+router.get("/books", bookController.books)
+router.get("/allBooks", bookController.allBooks)
+router.put("/booksInfo", bookController.booksInfo)
+router.put("/inc", bookController.inc)
+
 
 // router.get("/getBooksWithAuthorDetails", bookController.getBooksWithAuthorDetails)
 
