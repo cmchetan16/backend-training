@@ -7,12 +7,26 @@ const mid1 = (req, res, next) => {
     return res.send({ msg: "token is required" });
   }
 
+// const decodedtokenId= tokenValidator.userId
+// console.log(decodedtokenId)
+
+
+
+  const userId = req.params.userId;   //no need to write here
   const tokenValidator = jwt.verify(
     token,"amncjbcjhjcjhchjecjkdjcejhjecjjjwdjw");
-    
-  if (!tokenValidator) {
-    return res.send({ msg: "token is not valid" });
-  }
+//console.log(tokenValidator)
+// const decodedtokenId= tokenValidator.userId
+// if(decodedtokenId == userId){
+//   console.log("autorize user")
+// }else{
+//   console.log("not autorize user")
+// }
+
+    if(tokenValidator.userId != userId){
+      return res.send({msg: "Token or User is not valid "})
+    }
+    // console.log(decodedtokenId)
   next();
 };
 module.exports.mid1 = mid1;

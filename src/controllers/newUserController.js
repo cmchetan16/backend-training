@@ -19,8 +19,9 @@ const login = async function (req, res) {
     return res.send({ msg: "User not found" });
   }
   let tokenCreate = jwt.sign(
-    { userId: details._id.toString() },
+    { userId: details._id.toString()},
     "amncjbcjhjcjhchjecjkdjcejhjecjjjwdjw"
+    // name: "chetan", }
   );
   res.setHeader("x-auth-token", tokenCreate);
   res.send({ status: true, token: tokenCreate });
@@ -62,7 +63,7 @@ const deleteUsers = async (req, res) => {
     $set: { isDeleted: true },
   });
   if (!data) return res.send("user not found");
-  res.send("user is deleted..........");
+  res.send({status: "true", msg: data});
 };
 module.exports.updateUser = updateUser;
 module.exports.createUser = createUsers;
