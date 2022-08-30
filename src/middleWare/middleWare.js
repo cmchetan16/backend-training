@@ -1,10 +1,10 @@
 const jwt = require("jsonwebtoken");
-
 const mid1 = (req, res, next) => {
+  try{
   const token = req.headers["x-auth-token"];
 
   if (!token) {
-    return res.send({ msg: "token is required" });
+    return res.status(401).send({ status: false, msg: "Unauthorized" });
   }
 
 // const decodedtokenId= tokenValidator.userId
@@ -24,9 +24,13 @@ const mid1 = (req, res, next) => {
 // }
 
     if(tokenValidator.userId != userId){
-      return res.send({msg: "Token or User is not valid "})
+      return res.status(403).send({status: false, msg: "Token or User is not valid "})
     }
     // console.log(decodedtokenId)
   next();
+} catch (err) {
+  console.log("This is the error :", err.message)
+    res.status(500).send({ msg: "Error", error: err.message })
+}
 };
 module.exports.mid1 = mid1;
